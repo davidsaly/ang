@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	
+	<!-- ng-app makes it an angular application -->
+	<body ng-app="myApp" >
+		
+		<div ng-controller="myCtrl">
+
+		 	<p>Looping with ng-repeat:</p>
+		 	  <ul>
+			    <li ng-repeat="x in names">
+			      {{ x }}
+			    </li>
+			  </ul>
+
+		</div >
+
+		<div ng-controller="quotesCtrl">
+			
+			<p>AAPL Quotes from Yahoo API</p>
+			
+			<table>
+			    <tr ng-repeat="x in quotes">
+			      <td>{{ x.Date | date }}</td>
+			      <td>{{ x.Close | currency }}</td>
+			    </tr>
+			</table>
+
+		</div>
+
+		<my-directive/>
+
+	</body>
+
+	<script src="myApp.js"></script>
+	<script src="myCtrl.js"></script>
+	<script src="quotesCtrl.js"></script>
+	<script src="myDir.js"></script>
+
+</html>
