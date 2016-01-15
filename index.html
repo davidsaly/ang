@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-US">
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
 	
 	<!-- ng-app makes it an angular application -->
 	<body ng-app="myApp" >
@@ -18,24 +20,27 @@
 
 		<div ng-controller="quotesCtrl">
 			
-			<p>AAPL Quotes from Yahoo API</p>
-
-			<table>
-			    <tr ng-repeat="x in quotes">
-			      <td>{{ x.Date | date }}</td>
-			      <td>{{ x.Close | currency }}</td>
-			    </tr>
-			</table>
+			<my-directive/>
+			<dthree-directive/>
 
 		</div>
 
-			<my-directive/>
+		<div ng-controller="quotesCtrl2">
+			
+			<!-- <chart-directive/> -->
+			<div chart-directive chart-data="quotes"></div>
 
+		</div>
+
+			<!-- <div dthree-directive></div> -->
 	</body>
 
 	<script src="myApp.js"></script>
 	<script src="myCtrl.js"></script>
 	<script src="quotesCtrl.js"></script>
+	<script src="quotesCtrl2.js"></script>
 	<script src="myDir.js"></script>
+	<script src="chartDir.js"></script>
+	<script src="d3Chart.js"></script>
 
 </html>

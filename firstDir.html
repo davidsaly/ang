@@ -1,3 +1,10 @@
-<h1>Created with a directive</h1>
+<h2>This is created with a directive</h2>
 
+<p>AAPL Quotes from Yahoo API</p>
 
+<table>
+    <tr ng-repeat="x in quotes">
+      <td>{{ x.Date | date }}</td>
+      <td>{{ x.Close | currency }}</td>
+    </tr>
+</table>

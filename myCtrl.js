@@ -1,4 +1,4 @@
 // controller
 app.controller("myCtrl", function($scope) {
-    $scope.names = ["John", "David", "Joseph"];
+    $scope.names = ["John", "Jane", "Joseph"];
 });
