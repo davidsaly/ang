@@ -23,10 +23,10 @@ app.directive("chartDirective", function($parse, $window) {
            function setChartParameters(){
 
            	   var minDate = new Date(perfData[0].Date);
- 			   var maxDate = new Date(perfData[perfData.length-1].Date);
+      			   var maxDate = new Date(perfData[perfData.length-1].Date);
 
- 			   console.log(minDate);
- 			   console.log(maxDate);
+      			   console.log(minDate);
+      			   console.log(maxDate);
 
                xScale = d3.time.scale()
 
@@ -59,11 +59,11 @@ app.directive("chartDirective", function($parse, $window) {
                // Function which creates the the d3 friendly data
                lineFunction = d3.svg.line()
                    .x(function (d) {
-                   	   console.log("date" + xScale(d.Date));
-                       return xScale(d.Date);
+                   	   console.log("date" + xScale(new Date(d['Date'])));
+                       return xScale(new Date(d['Date']));
                    })
                    .y(function (d) {
-                       console.log("price" + yScale(d.Close));
+                       // console.log("price" + yScale(d.Close));
                        return yScale(d.Close);
                    })
                    .interpolate("basis");

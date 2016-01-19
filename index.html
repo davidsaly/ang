@@ -2,12 +2,13 @@
 <html lang="en-US">
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="stylesheet.css">
 	
 	<!-- ng-app makes it an angular application -->
 	<body ng-app="myApp" >
 		
-		<div ng-controller="myCtrl">
+<!-- 		<div ng-controller="myCtrl">
 
 		 	<p>Looping with ng-repeat:</p>
 		 	  <ul>
@@ -16,21 +17,36 @@
 			    </li>
 			  </ul>
 
-		</div >
+		</div > -->
 
 		<div ng-controller="quotesCtrl">
 			
-			<my-directive/>
-			<dthree-directive/>
-
-		</div>
-
-		<div ng-controller="quotesCtrl2">
+			<!-- <pre> {{quotes}}</pre> -->
 			
-			<!-- <chart-directive/> -->
-			<div chart-directive chart-data="quotes"></div>
+<!-- 			<my-directive/>
+			<dthree-directive/> -->
 
 		</div>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-6" >
+					<div class="thumbnail" ng-controller="quotesCtrl2">
+					
+					<!-- <chart-directive/> -->
+
+						<input type="text" ng-model = "stockTicker" placeHolder="Stock Ticker">
+						<span>From: </span>
+						<input type="date" ng-model = "fromDate" placeHolder="From">
+						<span>To: </span>
+						<input type="date" ng-model = "toDate" placeHolder="To">
+
+						<div chart-directive chart-data="quotes"></div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
 
 			<!-- <div dthree-directive></div> -->
 	</body>
